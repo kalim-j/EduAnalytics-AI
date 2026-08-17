@@ -11,6 +11,12 @@ import InstallPrompt from "@/components/InstallPrompt";
 import BottomNav from "@/components/BottomNav";
 import PageCanvas3D from "@/components/PageCanvas3D";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
+import { validateEnv } from "@/lib/validateEnv";
+
+if (process.env.NODE_ENV === 'production') {
+  validateEnv();
+}
+
 
 const jakarta = Plus_Jakarta_Sans({ 
   subsets: ["latin"],

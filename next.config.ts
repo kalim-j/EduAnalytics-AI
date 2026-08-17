@@ -99,6 +99,27 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'source.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'ui-avatars.com',
+      }
+    ],
+    formats: ['image/webp', 'image/avif'],
+  },
+  compress: true,
+  productionBrowserSourceMaps: false,
+  experimental: {
+    optimizePackageImports: [
+      '@radix-ui/react-icons',
+      'framer-motion',
+    ],
+  },
   async headers() {
     return [
       {
